@@ -1,0 +1,27 @@
+<h3>Customers Transactions Graph</h3>
+<div class="center">
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Choose a date</mat-label>
+        <input placeholder=" MM/DD/YYYY" matInput  [(ngModel)]="filterDate" (change)="filterTransactions()">
+        <mat-hint>Enter date manually with this format MM/DD/YYYY</mat-hint>
+      </mat-form-field>
+      
+ 
+    
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="data"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+    
+</div>
